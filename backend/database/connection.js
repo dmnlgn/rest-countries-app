@@ -21,15 +21,21 @@ const getCountries = () => {
     .catch((err) => console.log(err));
 };
 
+const addDataToDb = async () => {
+  await db.read();
+  let countries = db.get("countries");
+
+  if (isEmpty(countries.value())) {
+    console.log("call to restcountries...");
+    const fetchCountries = await getCountries();
+    countries.push(...fetchCountries).write();
+  }
+};
+
 router.route("/countries").get(async (req, res) => {
   await db.read();
 
   let countries = db.get("countries");
-
-  if (isEmpty(countries.value())) {
-    const fetchCountries = await getCountries();
-    countries.push(...fetchCountries).write();
-  }
 
   const findCountry = countries
     .filter((element) => element.name.trim().toLowerCase().includes("united"))
@@ -71,5 +77,7 @@ router.route("/countries").post(async (req, res) => {
 
   res.send(findCountry);
 });
+
+addDataToDb();
 
 module.exports = router;
