@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "start": "concurrently \"cd ./backend && yarn start\" \"vite\"",
+    "start": "concurrently \"cd ./backend && npm start\" \"vite\"",
     "build": "vite build",
     "preview": "vite preview",
     "installBackend": "cd ./backend && npm install"
