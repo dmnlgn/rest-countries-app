@@ -1,0 +1,28 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "concurrently \"cd ./backend && yarn start\" \"vite\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "installBackend": "cd ./backend && npm install"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
+    "axios": "^0.27.2",
+    "concurrently": "^7.2.2",
+    "less": "^4.1.3",
+    "lodash": "^4.17.21",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "vite": "^2.9.9"
+  }
+}

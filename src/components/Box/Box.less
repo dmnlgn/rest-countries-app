@@ -1,0 +1,43 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+
+  &-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1em;
+    &-main {
+      grid-gap: 1em;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-sidebar {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .countries {
+    border: 1px solid #cccaca;
+    padding: 1em;
+    min-height: 500px;
+    &-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1em;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .box {
+    height: 100%;
+    &-content {
+      grid-template-columns: 1fr;
+    }
+  }
+}

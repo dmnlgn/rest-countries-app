@@ -1,0 +1,51 @@
+.country {
+  display: flex;
+  flex-direction: column;
+  &-box {
+    margin-top: 10px;
+    border: 1px solid #cccaca;
+    display: flex;
+    &-wrapper {
+      width: 100%;
+      padding: 1em;
+    }
+    &-element {
+      display: flex;
+      grid-gap: 1em;
+      justify-content: space-between;
+      label {
+        font-weight: bold;
+      }
+    }
+    &-button {
+      display: flex;
+      .btn {
+        padding: 0.5em;
+        border: 1px solid #cccaca;
+        font-size: 1em;
+        cursor: pointer;
+        font-weight: bold;
+        color: #000000;
+        background-color: #f7f2f2;
+      }
+    }
+    table,
+    th,
+    td {
+      border: 1px solid #cccaca;
+    }
+
+    table {
+      width: 100%;
+
+      tr {
+        td {
+          padding: 0.5em;
+        }
+        .label {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
